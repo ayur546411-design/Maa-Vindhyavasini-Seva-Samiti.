@@ -23,21 +23,21 @@ export default function ServiceDetailModal() {
   const getIcon = (iconName) => {
     switch (iconName) {
       case 'HeartHandshake':
-        return <HeartHandshake className="w-6 h-6 text-saffron-500" />;
+        return <HeartHandshake className="w-6 h-6 text-sky-600" />;
       case 'Shirt':
-        return <Shirt className="w-6 h-6 text-saffron-500" />;
+        return <Shirt className="w-6 h-6 text-sky-600" />;
       case 'UtensilsCrossed':
-        return <UtensilsCrossed className="w-6 h-6 text-saffron-500" />;
+        return <UtensilsCrossed className="w-6 h-6 text-sky-600" />;
       case 'GraduationCap':
-        return <GraduationCap className="w-6 h-6 text-saffron-500" />;
+        return <GraduationCap className="w-6 h-6 text-sky-600" />;
       default:
-        return <Heart className="w-6 h-6 text-saffron-500" />;
+        return <Heart className="w-6 h-6 text-sky-600" />;
     }
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm overflow-y-auto animate-in fade-in duration-200">
-      <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-maroon-100 overflow-hidden my-8">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-sky-950/60 backdrop-blur-sm overflow-y-auto animate-in fade-in duration-200">
+      <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-sky-100 overflow-hidden my-8">
         
         {/* Modal Banner Image */}
         <div className="relative h-60 w-full overflow-hidden">
@@ -56,10 +56,10 @@ export default function ServiceDetailModal() {
           </button>
 
           <div className="absolute bottom-4 left-6 right-6">
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-saffron-500 text-maroon-950 mb-2">
+            <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-sky-600 text-white mb-2 shadow">
               {selectedService.badge}
             </span>
-            <h3 className="font-serif font-bold text-2xl text-white">
+            <h3 className="font-bold text-2xl text-white">
               {selectedService.title}
             </h3>
           </div>
@@ -68,25 +68,25 @@ export default function ServiceDetailModal() {
         {/* Modal Content */}
         <div className="p-6 space-y-6 max-h-[60vh] overflow-y-auto">
           <div>
-            <h4 className="text-xs font-bold text-maroon-900 uppercase tracking-wider mb-2">
+            <h4 className="text-xs font-bold text-sky-950 uppercase tracking-wider mb-2">
               {lang === 'hi' ? 'विस्तृत सेवा विवरण' : 'Detailed Overview'}
             </h4>
-            <p className="text-sm text-stone-700 leading-relaxed">
+            <p className="text-sm text-slate-700 leading-relaxed">
               {selectedService.fullDesc}
             </p>
           </div>
 
           {/* Key Highlights */}
           {selectedService.keyHighlights && (
-            <div className="p-4 rounded-2xl bg-amber-50/70 border border-amber-200/80">
-              <h4 className="font-bold text-xs text-maroon-900 uppercase tracking-wider mb-3 flex items-center gap-1.5">
-                <Target className="w-4 h-4 text-saffron-600" />
+            <div className="p-4 rounded-2xl bg-sky-50/70 border border-sky-200">
+              <h4 className="font-bold text-xs text-sky-950 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+                <Target className="w-4 h-4 text-sky-600" />
                 <span>{lang === 'hi' ? 'प्रमुख सेवा आयाम एवं गतिविधियाँ' : 'Key Dimensions & Interventions'}</span>
               </h4>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-stone-800">
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-800">
                 {selectedService.keyHighlights.map((point, index) => (
                   <li key={index} className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-sky-600 flex-shrink-0 mt-0.5" />
                     <span>{point}</span>
                   </li>
                 ))}
@@ -96,13 +96,13 @@ export default function ServiceDetailModal() {
 
           {/* Beneficiaries Target */}
           {selectedService.targetGroup && (
-            <div className="flex items-start gap-3 p-3.5 rounded-xl bg-stone-50 border border-stone-200 text-xs">
-              <Users className="w-5 h-5 text-maroon-800 flex-shrink-0 mt-0.5" />
+            <div className="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-xs">
+              <Users className="w-5 h-5 text-sky-700 flex-shrink-0 mt-0.5" />
               <div>
-                <strong className="text-stone-900 block font-semibold">
+                <strong className="text-slate-900 block font-semibold">
                   {lang === 'hi' ? 'लाभार्थी वर्ग (Target Beneficiaries):' : 'Target Beneficiaries:'}
                 </strong>
-                <span className="text-stone-600">{selectedService.targetGroup}</span>
+                <span className="text-slate-600">{selectedService.targetGroup}</span>
               </div>
             </div>
           )}
@@ -114,9 +114,9 @@ export default function ServiceDetailModal() {
                 closeServiceModal();
                 openDonateModal(selectedService.title);
               }}
-              className="flex-1 py-3 px-4 rounded-xl bg-maroon-800 hover:bg-maroon-900 text-white font-bold text-xs tracking-wider uppercase shadow-md transition-all flex items-center justify-center gap-2"
+              className="flex-1 py-3 px-4 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs tracking-wider uppercase shadow transition-all flex items-center justify-center gap-2"
             >
-              <Heart className="w-4 h-4 fill-amber-300 text-amber-300" />
+              <Heart className="w-4 h-4 fill-sky-200 text-sky-200" />
               <span>{lang === 'hi' ? 'इस प्रकल्प में सहयोग दें' : 'Support This Cause'}</span>
             </button>
 
@@ -125,7 +125,7 @@ export default function ServiceDetailModal() {
                 closeServiceModal();
                 openVolunteerModal();
               }}
-              className="flex-1 py-3 px-4 rounded-xl border-2 border-maroon-800 text-maroon-800 hover:bg-maroon-50 font-bold text-xs tracking-wider uppercase transition-colors flex items-center justify-center gap-2"
+              className="flex-1 py-3 px-4 rounded-xl border-2 border-sky-600 text-sky-700 hover:bg-sky-50 font-bold text-xs tracking-wider uppercase transition-colors flex items-center justify-center gap-2"
             >
               <span>{lang === 'hi' ? 'स्वयंसेवक के रूप में जुड़ें' : 'Volunteer for This'}</span>
               <ArrowRight className="w-4 h-4" />
@@ -136,4 +136,3 @@ export default function ServiceDetailModal() {
     </div>
   );
 }
-

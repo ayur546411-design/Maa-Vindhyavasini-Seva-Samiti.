@@ -4,10 +4,8 @@ import { useDonationModal } from '../context/DonationModalContext';
 import { 
   X, 
   UserCheck, 
-  Sparkles, 
   Send, 
-  CheckCircle2, 
-  HeartHandshake 
+  CheckCircle2 
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
@@ -42,7 +40,6 @@ export default function VolunteerModal() {
       return;
     }
 
-    // Save registration locally for instant review/preview
     const existing = JSON.parse(localStorage.getItem('mvss_volunteers') || '[]');
     existing.push({
       ...formData,
@@ -56,7 +53,7 @@ export default function VolunteerModal() {
         particleCount: 70,
         spread: 60,
         origin: { y: 0.6 },
-        colors: ['#F59E0B', '#7B1E2B', '#10B981']
+        colors: ['#0284C7', '#38BDF8', '#FFFFFF']
       });
     } catch (err) {}
 
@@ -64,27 +61,27 @@ export default function VolunteerModal() {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm overflow-y-auto animate-in fade-in duration-200">
-      <div className="relative w-full max-w-xl bg-white rounded-3xl shadow-2xl border border-maroon-100 overflow-hidden my-8">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-sky-950/60 backdrop-blur-sm overflow-y-auto animate-in fade-in duration-200">
+      <div className="relative w-full max-w-xl bg-white rounded-3xl shadow-2xl border border-sky-100 overflow-hidden my-8">
         
         {/* Header */}
-        <div className="bg-gradient-to-r from-maroon-900 via-maroon-800 to-maroon-900 text-white px-6 py-4 flex items-center justify-between border-b-2 border-saffron-500">
+        <div className="bg-[#0C4A6E] text-white px-6 py-4 flex items-center justify-between border-b-2 border-sky-400">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-full bg-saffron-500/20 flex items-center justify-center border border-saffron-400/40">
-              <UserCheck className="w-5 h-5 text-saffron-400" />
+            <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-sky-300">
+              <UserCheck className="w-5 h-5 text-sky-200" />
             </div>
             <div>
-              <h3 className="font-serif font-bold text-lg text-amber-200 leading-tight">
+              <h3 className="font-bold text-lg text-white leading-tight">
                 {t.joinUs.formTitle}
               </h3>
-              <p className="text-xs text-amber-300/80">
+              <p className="text-xs text-sky-200">
                 {t.orgName} • {t.tagline}
               </p>
             </div>
           </div>
           <button
             onClick={closeVolunteerModal}
-            className="p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-stone-200 hover:text-white transition-colors"
+            className="p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-sky-100 hover:text-white transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
@@ -94,7 +91,7 @@ export default function VolunteerModal() {
         <div className="p-6 max-h-[80vh] overflow-y-auto">
           {!submitted ? (
             <form onSubmit={handleSubmit} className="space-y-4">
-              <p className="text-xs text-stone-600 bg-amber-50 p-2.5 rounded-xl border border-amber-200">
+              <p className="text-xs text-slate-600 bg-sky-50 p-2.5 rounded-xl border border-sky-200">
                 {t.joinUs.formNote}
               </p>
 
@@ -106,7 +103,7 @@ export default function VolunteerModal() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-bold text-stone-700 mb-1">
+                  <label className="block text-xs font-bold text-slate-700 mb-1">
                     {lang === 'hi' ? 'पूरा नाम *' : 'Full Name *'}
                   </label>
                   <input
@@ -116,12 +113,12 @@ export default function VolunteerModal() {
                     placeholder={lang === 'hi' ? 'जैसे: अमित सिंह' : 'e.g. Amit Singh'}
                     value={formData.fullName}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 border border-stone-300 rounded-xl text-xs focus:outline-none focus:border-maroon-800"
+                    className="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs focus:outline-none focus:border-sky-600"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-stone-700 mb-1">
+                  <label className="block text-xs font-bold text-slate-700 mb-1">
                     {lang === 'hi' ? 'मोबाइल नंबर / व्हाट्सएप *' : 'Mobile / WhatsApp *'}
                   </label>
                   <input
@@ -131,14 +128,14 @@ export default function VolunteerModal() {
                     placeholder="+91 9XXXXXXXXX"
                     value={formData.mobile}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 border border-stone-300 rounded-xl text-xs focus:outline-none focus:border-maroon-800"
+                    className="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs focus:outline-none focus:border-sky-600"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-bold text-stone-700 mb-1">
+                  <label className="block text-xs font-bold text-slate-700 mb-1">
                     {lang === 'hi' ? 'ईमेल पता' : 'Email Address'}
                   </label>
                   <input
@@ -147,12 +144,12 @@ export default function VolunteerModal() {
                     placeholder="email@example.com"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 border border-stone-300 rounded-xl text-xs focus:outline-none focus:border-maroon-800"
+                    className="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs focus:outline-none focus:border-sky-600"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-stone-700 mb-1">
+                  <label className="block text-xs font-bold text-slate-700 mb-1">
                     {lang === 'hi' ? 'शहर / जिला *' : 'City / District *'}
                   </label>
                   <input
@@ -162,21 +159,21 @@ export default function VolunteerModal() {
                     placeholder={lang === 'hi' ? 'जैसे: वाराणसी / मीरजापुर / प्रयागराज' : 'e.g. Varanasi / Mirzapur'}
                     value={formData.city}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 border border-stone-300 rounded-xl text-xs focus:outline-none focus:border-maroon-800"
+                    className="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs focus:outline-none focus:border-sky-600"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-bold text-stone-700 mb-1">
+                  <label className="block text-xs font-bold text-slate-700 mb-1">
                     {lang === 'hi' ? 'रुचि का सेवा क्षेत्र' : 'Area of Interest'}
                   </label>
                   <select
                     name="interest"
                     value={formData.interest}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 border border-stone-300 rounded-xl text-xs focus:outline-none focus:border-maroon-800 bg-white"
+                    className="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs focus:outline-none focus:border-sky-600 bg-white"
                   >
                     <option value="अन्नदान एवं भिक्षा प्रदान">{lang === 'hi' ? 'अन्नदान एवं भिक्षा प्रदान' : 'Bhiksha Pradan (Food Relief)'}</option>
                     <option value="वस्त्र समर्पण अभियान">{lang === 'hi' ? 'वस्त्र समर्पण अभियान' : 'Vastra Samarpan (Clothes)'}</option>
@@ -187,14 +184,14 @@ export default function VolunteerModal() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-stone-700 mb-1">
+                  <label className="block text-xs font-bold text-slate-700 mb-1">
                     {lang === 'hi' ? 'उपलब्धता / समय' : 'Availability'}
                   </label>
                   <select
                     name="availability"
                     value={formData.availability}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 border border-stone-300 rounded-xl text-xs focus:outline-none focus:border-maroon-800 bg-white"
+                    className="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs focus:outline-none focus:border-sky-600 bg-white"
                   >
                     <option value="सप्ताहांत (Weekends)">{lang === 'hi' ? 'सप्ताहांत (Weekends)' : 'Weekends'}</option>
                     <option value="दैनिक 1-2 घंटे">{lang === 'hi' ? 'दैनिक 1-2 घंटे' : '1-2 Hours Daily'}</option>
@@ -205,7 +202,7 @@ export default function VolunteerModal() {
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-stone-700 mb-1">
+                <label className="block text-xs font-bold text-slate-700 mb-1">
                   {lang === 'hi' ? 'कोई विशेष कौशल अथवा संदेश (वैकल्पिक)' : 'Special Skills / Message (Optional)'}
                 </label>
                 <textarea
@@ -214,27 +211,27 @@ export default function VolunteerModal() {
                   placeholder={lang === 'hi' ? 'अपने बारे में संक्षेप में लिखें...' : 'Brief note about how you wish to contribute...'}
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 border border-stone-300 rounded-xl text-xs focus:outline-none focus:border-maroon-800"
+                  className="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs focus:outline-none focus:border-sky-600"
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-maroon-800 via-maroon-700 to-maroon-800 hover:from-maroon-900 hover:to-maroon-800 text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all flex items-center justify-center gap-2"
+                className="w-full py-3 px-4 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs uppercase tracking-wider shadow transition-all flex items-center justify-center gap-2"
               >
-                <Send className="w-4 h-4 text-amber-300" />
+                <Send className="w-4 h-4 text-sky-100" />
                 <span>{lang === 'hi' ? 'स्वयंसेवक के रूप में पंजीकरण सबमिट करें' : 'Submit Volunteer Registration'}</span>
               </button>
             </form>
           ) : (
             <div className="text-center py-8 space-y-4">
-              <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
+              <div className="w-16 h-16 rounded-full bg-sky-100 text-sky-600 flex items-center justify-center mx-auto">
                 <CheckCircle2 className="w-10 h-10" />
               </div>
-              <h4 className="font-serif font-bold text-xl text-maroon-950">
+              <h4 className="font-bold text-xl text-sky-950">
                 {lang === 'hi' ? 'पंजीकरण हेतु हार्दिक धन्यवाद!' : 'Thank You for Registering!'}
               </h4>
-              <p className="text-sm text-stone-600 max-w-sm mx-auto">
+              <p className="text-sm text-slate-600 max-w-sm mx-auto">
                 {lang === 'hi'
                   ? `आदरणीय ${formData.fullName}, आपका पंजीकरण स्वीकार कर लिया गया है। माँ विंध्यवासिनी सेवा समिति की समन्वयक टीम आपसे जल्द ही संपर्क करेगी।`
                   : `Dear ${formData.fullName}, your volunteer interest has been recorded. Our coordination team will reach out to you shortly.`}
@@ -244,7 +241,7 @@ export default function VolunteerModal() {
                   setSubmitted(false);
                   closeVolunteerModal();
                 }}
-                className="px-6 py-2.5 rounded-xl bg-maroon-800 text-white text-xs font-bold shadow-md hover:bg-maroon-900"
+                className="px-6 py-2.5 rounded-xl bg-sky-600 text-white text-xs font-bold shadow hover:bg-sky-700"
               >
                 {lang === 'hi' ? 'ठीक है' : 'Close'}
               </button>
@@ -255,4 +252,3 @@ export default function VolunteerModal() {
     </div>
   );
 }
-

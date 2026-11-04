@@ -7,11 +7,7 @@ import {
   Compass, 
   ShieldCheck, 
   Users, 
-  Award, 
-  Sparkles, 
-  CheckCircle2, 
-  Building2,
-  FileText
+  CheckCircle2
 } from 'lucide-react';
 
 export default function AboutPage() {
@@ -78,19 +74,19 @@ export default function AboutPage() {
       
       {/* Page Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-        <span className="text-xs font-bold text-saffron-700 uppercase tracking-widest bg-saffron-100 px-3.5 py-1 rounded-full">
+        <span className="text-xs font-bold text-sky-700 uppercase tracking-widest bg-sky-100 px-3.5 py-1 rounded-full border border-sky-200">
           {lang === 'hi' ? '॥ नर सेवा ही नारायण सेवा ॥' : '॥ Our Sacred Journey ॥'}
         </span>
-        <h1 className="text-3xl sm:text-5xl font-serif font-bold text-maroon-900">
+        <h1 className="text-3xl sm:text-5xl font-bold text-sky-950">
           {t.nav.about}
         </h1>
-        <p className="text-stone-600 max-w-2xl mx-auto text-sm sm:text-base">
+        <p className="text-slate-600 max-w-2xl mx-auto text-sm sm:text-base">
           {t.aboutPreview.description}
         </p>
 
         <div className="pt-2">
-          <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cream-200 border border-amber-300 text-maroon-900 text-xs font-semibold">
-            <ShieldCheck className="w-4 h-4 text-maroon-800" />
+          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-sky-200 text-sky-900 text-xs font-semibold shadow-sm">
+            <ShieldCheck className="w-4 h-4 text-sky-600" />
             <span>{t.regPlaceholder}</span>
           </span>
         </div>
@@ -101,14 +97,14 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           
           {/* Vision */}
-          <div className="bg-white p-8 rounded-3xl border border-maroon-800/10 shadow-sacred space-y-4 relative overflow-hidden">
-            <div className="w-12 h-12 rounded-2xl bg-maroon-800 text-amber-300 flex items-center justify-center">
+          <div className="bg-white p-8 rounded-3xl border border-sky-100 shadow-sm space-y-4 relative overflow-hidden">
+            <div className="w-12 h-12 rounded-2xl bg-sky-600 text-white flex items-center justify-center shadow-sm">
               <Compass className="w-6 h-6" />
             </div>
-            <h3 className="font-serif font-bold text-2xl text-maroon-900">
+            <h3 className="font-bold text-2xl text-sky-950">
               {lang === 'hi' ? 'हमारा विजन (Our Vision)' : 'Our Vision'}
             </h3>
-            <p className="text-stone-700 text-sm leading-relaxed">
+            <p className="text-slate-700 text-sm leading-relaxed">
               {lang === 'hi'
                 ? 'एक ऐसे समरस, संवेदनशील और स्वावलंबी समाज की स्थापना करना जहाँ कोई भी नागरिक भूख, वस्त्र के अभाव या अशिक्षा के कारण उपेक्षित न रहे। हर व्यक्ति को गरिमापूर्ण जीवन और सम्मानजनक मानवीय अवसर प्राप्त हों।'
                 : 'To foster an equitable, empathetic society where no citizen is left destitute due to hunger, extreme weather exposure, or lack of education; ensuring every human being enjoys dignity and compassionate support.'}
@@ -116,14 +112,14 @@ export default function AboutPage() {
           </div>
 
           {/* Mission */}
-          <div className="bg-white p-8 rounded-3xl border border-maroon-800/10 shadow-sacred space-y-4 relative overflow-hidden">
-            <div className="w-12 h-12 rounded-2xl bg-saffron-500 text-maroon-950 flex items-center justify-center">
+          <div className="bg-white p-8 rounded-3xl border border-sky-100 shadow-sm space-y-4 relative overflow-hidden">
+            <div className="w-12 h-12 rounded-2xl bg-sky-100 text-sky-700 flex items-center justify-center border border-sky-200">
               <Target className="w-6 h-6" />
             </div>
-            <h3 className="font-serif font-bold text-2xl text-maroon-900">
+            <h3 className="font-bold text-2xl text-sky-950">
               {lang === 'hi' ? 'हमारा मिशन (Our Mission)' : 'Our Mission'}
             </h3>
-            <p className="text-stone-700 text-sm leading-relaxed">
+            <p className="text-slate-700 text-sm leading-relaxed">
               {lang === 'hi'
                 ? 'चार प्रमुख स्तंभों—निस्सहाय सेवा, वस्त्र समर्पण, भिक्षा प्रदान (अन्नदान) और सुलभ शिक्षा के माध्यम से धरातल पर निरंतर सक्रिय रहकर जरूरतमंदों तक समयबद्ध सहायता पहुंचाना और समाज में दान एवं सेवा की संस्कृति को सुदृढ़ करना।'
                 : 'To execute time-tested on-ground humanitarian drives across four core pillars: Seva to Needy, Vastra Samarpan, Bhiksha Pradan (Annadanam), and Sulabh Shiksha; cultivating widespread civic responsibility and transparency.'}
@@ -135,21 +131,21 @@ export default function AboutPage() {
 
       {/* Core Objectives */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-cream-100/70 p-8 sm:p-12 rounded-3xl border border-amber-200/80">
+        <div className="bg-sky-50/70 p-8 sm:p-12 rounded-3xl border border-sky-100">
           <div className="max-w-3xl mb-8">
-            <span className="text-xs font-bold text-saffron-700 uppercase tracking-widest bg-white px-3 py-1 rounded-full border border-amber-200">
+            <span className="text-xs font-bold text-sky-700 uppercase tracking-widest bg-white px-3 py-1 rounded-full border border-sky-200">
               {lang === 'hi' ? 'संस्थागत लक्ष्य' : 'Key Objectives'}
             </span>
-            <h2 className="text-2xl sm:text-3xl font-serif font-bold text-maroon-900 mt-2">
+            <h2 className="text-2xl sm:text-3xl font-bold text-sky-950 mt-2">
               {lang === 'hi' ? 'समिति के मुख्य उद्देश्य एवं सेवा प्रतिज्ञा' : 'Our Institutional Objectives'}
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {objectives.map((obj, i) => (
-              <div key={i} className="flex items-start gap-3 bg-white p-4 rounded-2xl border border-stone-200/70 shadow-sm">
-                <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
-                <span className="text-xs sm:text-sm text-stone-700 leading-relaxed">{obj}</span>
+              <div key={i} className="flex items-start gap-3 bg-white p-4 rounded-2xl border border-sky-100 shadow-sm">
+                <CheckCircle2 className="w-5 h-5 text-sky-600 flex-shrink-0 mt-0.5" />
+                <span className="text-xs sm:text-sm text-slate-700 leading-relaxed">{obj}</span>
               </div>
             ))}
           </div>
@@ -159,24 +155,24 @@ export default function AboutPage() {
       {/* Core Values & Principles */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
-          <span className="text-xs font-bold text-saffron-700 uppercase tracking-widest bg-saffron-100 px-3.5 py-1 rounded-full">
+          <span className="text-xs font-bold text-sky-700 uppercase tracking-widest bg-sky-100 px-3.5 py-1 rounded-full border border-sky-200">
             {lang === 'hi' ? 'मूल सिद्धांत' : 'Guiding Principles'}
           </span>
-          <h2 className="text-3xl font-serif font-bold text-maroon-900">
+          <h2 className="text-3xl font-bold text-sky-950">
             {lang === 'hi' ? 'हमारे शाश्वत मूल्य एवं आदर्श' : 'Our Core Values'}
           </h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {coreValues.map((val, i) => (
-            <div key={i} className="bg-white p-6 rounded-3xl border border-stone-200 shadow-sacred hover:shadow-sacred-lg transition-all space-y-2">
-              <div className="w-8 h-8 rounded-full bg-maroon-100 text-maroon-800 flex items-center justify-center font-bold text-xs">
+            <div key={i} className="bg-white p-6 rounded-3xl border border-sky-100 shadow-sm hover:shadow-md transition-all space-y-2">
+              <div className="w-8 h-8 rounded-full bg-sky-100 text-sky-800 flex items-center justify-center font-bold text-xs">
                 {i + 1}
               </div>
-              <h4 className="font-serif font-bold text-base text-maroon-950">
+              <h4 className="font-bold text-base text-sky-950">
                 {val.title}
               </h4>
-              <p className="text-xs text-stone-600 leading-relaxed">
+              <p className="text-xs text-slate-600 leading-relaxed">
                 {val.desc}
               </p>
             </div>
@@ -187,13 +183,13 @@ export default function AboutPage() {
       {/* Founder and Team (With clearly marked placeholders as requested) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
-          <span className="text-xs font-bold text-saffron-700 uppercase tracking-widest bg-saffron-100 px-3.5 py-1 rounded-full">
+          <span className="text-xs font-bold text-sky-700 uppercase tracking-widest bg-sky-100 px-3.5 py-1 rounded-full border border-sky-200">
             {lang === 'hi' ? 'कार्यकारिणी एवं मार्गदर्शक' : 'Leadership & Trustees'}
           </span>
-          <h2 className="text-3xl font-serif font-bold text-maroon-900">
+          <h2 className="text-3xl font-bold text-sky-950">
             {lang === 'hi' ? 'समिति के संरक्षक एवं नेतृत्व' : 'Founders & Office Bearers'}
           </h2>
-          <p className="text-xs text-stone-500 italic">
+          <p className="text-xs text-slate-500 italic">
             {lang === 'hi'
               ? 'नोट: संस्था के पदाधिकारियों एवं मार्गदर्शकों के नाम व आधिकारिक फोटोग्राफ सत्यापन पश्चात अद्यतन किए जा रहे हैं।'
               : 'Note: Official leadership names and certified credentials are under formal updating and verified placeholder format.'}
@@ -204,9 +200,9 @@ export default function AboutPage() {
           {teamPlaceholders.map((member, i) => (
             <div
               key={i}
-              className="bg-white rounded-3xl overflow-hidden border border-stone-200 shadow-sacred p-6 text-center space-y-3"
+              className="bg-white rounded-3xl overflow-hidden border border-sky-100 shadow-sm p-6 text-center space-y-3"
             >
-              <div className="w-24 h-24 mx-auto rounded-full overflow-hidden bg-stone-100 border-2 border-amber-300 p-1">
+              <div className="w-24 h-24 mx-auto rounded-full overflow-hidden bg-slate-100 border-2 border-sky-300 p-1">
                 <img
                   src={member.avatar}
                   alt={member.role}
@@ -215,15 +211,15 @@ export default function AboutPage() {
               </div>
 
               <div>
-                <span className="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-maroon-50 text-maroon-800 mb-1">
+                <span className="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-sky-50 text-sky-800 border border-sky-200 mb-1">
                   {member.role}
                 </span>
-                <h4 className="font-serif font-bold text-stone-900 text-sm">
+                <h4 className="font-bold text-slate-900 text-sm">
                   {member.name}
                 </h4>
               </div>
 
-              <p className="text-xs text-stone-500 italic">
+              <p className="text-xs text-slate-500 italic">
                 {member.desc}
               </p>
             </div>

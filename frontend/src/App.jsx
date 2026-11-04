@@ -57,7 +57,7 @@ function MainApp() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FFF8ED] text-[#292524] relative selection:bg-maroon-800 selection:text-white">
+    <div className={`min-h-screen flex flex-col bg-[#F0F7FF] text-[#0F172A] relative selection:bg-sky-200 selection:text-sky-950 ${lang === 'hi' ? 'font-devnagri' : 'font-roman'}`}>
       {/* Top Navbar */}
       <Navbar activePage={activePage} setActivePage={setActivePage} />
 

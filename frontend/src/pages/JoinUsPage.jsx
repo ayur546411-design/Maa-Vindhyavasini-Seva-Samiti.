@@ -4,9 +4,7 @@ import {
   HeartHandshake, 
   Send, 
   CheckCircle2, 
-  ShieldCheck, 
   Users, 
-  Sparkles, 
   Award, 
   HelpCircle 
 } from 'lucide-react';
@@ -40,7 +38,6 @@ export default function JoinUsPage() {
       return;
     }
 
-    // Save volunteer registration locally
     const existing = JSON.parse(localStorage.getItem('mvss_volunteers') || '[]');
     existing.push({
       ...formData,
@@ -54,7 +51,7 @@ export default function JoinUsPage() {
         particleCount: 90,
         spread: 70,
         origin: { y: 0.6 },
-        colors: ['#7B1E2B', '#F59E0B', '#10B981']
+        colors: ['#0284C7', '#38BDF8', '#FFFFFF']
       });
     } catch (err) {}
 
@@ -96,13 +93,13 @@ export default function JoinUsPage() {
       
       {/* Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-        <span className="text-xs font-bold text-saffron-700 uppercase tracking-widest bg-saffron-100 px-3.5 py-1 rounded-full">
+        <span className="text-xs font-bold text-sky-700 uppercase tracking-widest bg-sky-100 px-3.5 py-1 rounded-full border border-sky-200">
           {t.joinUs.badge}
         </span>
-        <h1 className="text-3xl sm:text-5xl font-serif font-bold text-maroon-900">
+        <h1 className="text-3xl sm:text-5xl font-bold text-sky-950">
           {t.joinUs.title}
         </h1>
-        <p className="text-stone-600 max-w-2xl mx-auto text-sm sm:text-base">
+        <p className="text-slate-600 max-w-2xl mx-auto text-sm sm:text-base">
           {t.joinUs.subtitle}
         </p>
       </section>
@@ -113,33 +110,33 @@ export default function JoinUsPage() {
           
           {/* Left Column: Why Join & Benefits */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="bg-white p-6 sm:p-8 rounded-3xl border border-maroon-800/10 shadow-sacred space-y-6">
-              <h3 className="font-serif font-bold text-xl text-maroon-950 flex items-center gap-2">
-                <HeartHandshake className="w-5 h-5 text-saffron-600" />
+            <div className="bg-white p-6 sm:p-8 rounded-3xl border border-sky-100 shadow-sm space-y-6">
+              <h3 className="font-bold text-xl text-sky-950 flex items-center gap-2">
+                <HeartHandshake className="w-5 h-5 text-sky-600" />
                 <span>{lang === 'hi' ? 'स्वयंसेवक क्यों बनें?' : 'Why Join Our Mission?'}</span>
               </h3>
 
               <div className="space-y-4">
                 {volunteerBenefits.map((b, i) => (
-                  <div key={i} className="flex items-start gap-3 p-3.5 bg-cream-50 rounded-2xl border border-amber-200/60">
-                    <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+                  <div key={i} className="flex items-start gap-3 p-3.5 bg-sky-50/70 rounded-2xl border border-sky-200">
+                    <CheckCircle2 className="w-5 h-5 text-sky-600 flex-shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="font-bold text-xs sm:text-sm text-maroon-950">{b.title}</h4>
-                      <p className="text-xs text-stone-600 mt-0.5 leading-relaxed">{b.desc}</p>
+                      <h4 className="font-bold text-xs sm:text-sm text-sky-950">{b.title}</h4>
+                      <p className="text-xs text-slate-600 mt-0.5 leading-relaxed">{b.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
               {/* Permanent Membership Box */}
-              <div className="p-4 rounded-2xl bg-maroon-900 text-white space-y-2">
+              <div className="p-5 rounded-2xl bg-[#0C4A6E] text-white space-y-2 shadow-sm">
                 <div className="flex items-center gap-2">
-                  <Award className="w-5 h-5 text-amber-300" />
-                  <h4 className="font-serif font-bold text-sm text-amber-200">
+                  <Award className="w-5 h-5 text-sky-300" />
+                  <h4 className="font-bold text-sm text-sky-200">
                     {lang === 'hi' ? 'आजीवन सदस्यता (Become a Member)' : 'Become a Lifetime Member'}
                   </h4>
                 </div>
-                <p className="text-xs text-stone-300 leading-relaxed">
+                <p className="text-xs text-sky-100/90 leading-relaxed">
                   {lang === 'hi'
                     ? 'यदि आप संस्था की नीति-निर्धारण एवं स्थायी सेवा प्रकल्पों के संचालन में सक्रिय भूमिका निभाना चाहते हैं, तो समिति के आजीवन सदस्य बनें।'
                     : 'If you wish to participate actively in organizational decision-making and sustainable programs, connect for permanent membership.'}
@@ -150,15 +147,15 @@ export default function JoinUsPage() {
 
           {/* Right Column: Full Interactive Volunteer Registration Form */}
           <div className="lg:col-span-7">
-            <div className="bg-white p-6 sm:p-10 rounded-3xl border border-maroon-800/10 shadow-sacred">
+            <div className="bg-white p-6 sm:p-10 rounded-3xl border border-sky-100 shadow-sm">
               <div className="mb-6 space-y-1">
-                <span className="text-xs font-bold text-saffron-700 uppercase tracking-wider">
+                <span className="text-xs font-bold text-sky-700 uppercase tracking-wider">
                   {lang === 'hi' ? 'ऑनलाइन आवेदन' : 'Online Registration'}
                 </span>
-                <h3 className="font-serif font-bold text-2xl text-maroon-950">
+                <h3 className="font-bold text-2xl text-sky-950">
                   {t.joinUs.formTitle}
                 </h3>
-                <p className="text-xs text-stone-500">
+                <p className="text-xs text-slate-500">
                   {t.joinUs.formNote}
                 </p>
               </div>
@@ -173,7 +170,7 @@ export default function JoinUsPage() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-stone-700 mb-1">
+                      <label className="block text-xs font-bold text-slate-700 mb-1">
                         {lang === 'hi' ? 'पूरा नाम *' : 'Full Name *'}
                       </label>
                       <input
@@ -183,12 +180,12 @@ export default function JoinUsPage() {
                         placeholder={lang === 'hi' ? 'जैसे: राहुल वर्मा' : 'e.g. Rahul Verma'}
                         value={formData.fullName}
                         onChange={handleChange}
-                        className="w-full px-3.5 py-2.5 border border-stone-300 rounded-xl text-xs focus:outline-none focus:border-maroon-800"
+                        className="w-full px-3.5 py-2.5 border border-slate-300 rounded-xl text-xs focus:outline-none focus:border-sky-600 focus:ring-1 focus:ring-sky-600"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-stone-700 mb-1">
+                      <label className="block text-xs font-bold text-slate-700 mb-1">
                         {lang === 'hi' ? 'मोबाइल नंबर (व्हाट्सएप सहित) *' : 'Mobile Number (WhatsApp) *'}
                       </label>
                       <input
@@ -198,14 +195,14 @@ export default function JoinUsPage() {
                         placeholder="+91 9XXXXXXXXX"
                         value={formData.mobile}
                         onChange={handleChange}
-                        className="w-full px-3.5 py-2.5 border border-stone-300 rounded-xl text-xs focus:outline-none focus:border-maroon-800"
+                        className="w-full px-3.5 py-2.5 border border-slate-300 rounded-xl text-xs focus:outline-none focus:border-sky-600 focus:ring-1 focus:ring-sky-600"
                       />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-stone-700 mb-1">
+                      <label className="block text-xs font-bold text-slate-700 mb-1">
                         {lang === 'hi' ? 'ईमेल पता' : 'Email Address'}
                       </label>
                       <input
@@ -214,12 +211,12 @@ export default function JoinUsPage() {
                         placeholder="yourname@gmail.com"
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full px-3.5 py-2.5 border border-stone-300 rounded-xl text-xs focus:outline-none focus:border-maroon-800"
+                        className="w-full px-3.5 py-2.5 border border-slate-300 rounded-xl text-xs focus:outline-none focus:border-sky-600 focus:ring-1 focus:ring-sky-600"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-stone-700 mb-1">
+                      <label className="block text-xs font-bold text-slate-700 mb-1">
                         {lang === 'hi' ? 'वर्तमान शहर / जिला *' : 'Current City / District *'}
                       </label>
                       <input
@@ -229,21 +226,21 @@ export default function JoinUsPage() {
                         placeholder={lang === 'hi' ? 'जैसे: वाराणसी / मीरजापुर / लखनऊ' : 'e.g. Varanasi / Mirzapur'}
                         value={formData.city}
                         onChange={handleChange}
-                        className="w-full px-3.5 py-2.5 border border-stone-300 rounded-xl text-xs focus:outline-none focus:border-maroon-800"
+                        className="w-full px-3.5 py-2.5 border border-slate-300 rounded-xl text-xs focus:outline-none focus:border-sky-600 focus:ring-1 focus:ring-sky-600"
                       />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-stone-700 mb-1">
+                      <label className="block text-xs font-bold text-slate-700 mb-1">
                         {lang === 'hi' ? 'रुचि का क्षेत्र (Area of Interest) *' : 'Area of Interest *'}
                       </label>
                       <select
                         name="interest"
                         value={formData.interest}
                         onChange={handleChange}
-                        className="w-full px-3.5 py-2.5 border border-stone-300 rounded-xl text-xs focus:outline-none focus:border-maroon-800 bg-white"
+                        className="w-full px-3.5 py-2.5 border border-slate-300 rounded-xl text-xs focus:outline-none focus:border-sky-600 bg-white"
                       >
                         <option value="अन्नदान एवं भिक्षा प्रदान सेवा">{lang === 'hi' ? 'अन्नदान एवं भिक्षा प्रदान' : 'Bhiksha Pradan (Food Relief)'}</option>
                         <option value="वस्त्र समर्पण अभियान">{lang === 'hi' ? 'वस्त्र समर्पण अभियान' : 'Vastra Samarpan (Clothes)'}</option>
@@ -254,14 +251,14 @@ export default function JoinUsPage() {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-stone-700 mb-1">
+                      <label className="block text-xs font-bold text-slate-700 mb-1">
                         {lang === 'hi' ? 'उपलब्ध समय (Availability)' : 'Availability'}
                       </label>
                       <select
                         name="availability"
                         value={formData.availability}
                         onChange={handleChange}
-                        className="w-full px-3.5 py-2.5 border border-stone-300 rounded-xl text-xs focus:outline-none focus:border-maroon-800 bg-white"
+                        className="w-full px-3.5 py-2.5 border border-slate-300 rounded-xl text-xs focus:outline-none focus:border-sky-600 bg-white"
                       >
                         <option value="सप्ताहांत (Weekends)">{lang === 'hi' ? 'सप्ताहांत (Weekends)' : 'Weekends'}</option>
                         <option value="प्रतिदिन 1-2 घंटे">{lang === 'hi' ? 'प्रतिदिन 1-2 घंटे' : '1-2 Hours Daily'}</option>
@@ -272,7 +269,7 @@ export default function JoinUsPage() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-stone-700 mb-1">
+                    <label className="block text-xs font-bold text-slate-700 mb-1">
                       {lang === 'hi' ? 'अपने बारे में या सेवा के प्रति प्रेरणा (संदेश)' : 'Personal Note / Motivation (Optional)'}
                     </label>
                     <textarea
@@ -281,27 +278,27 @@ export default function JoinUsPage() {
                       placeholder={lang === 'hi' ? 'आप समिति के साथ किस प्रकार सहयोग करना चाहते हैं...' : 'How would you like to contribute...'}
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full px-3.5 py-2 border border-stone-300 rounded-xl text-xs focus:outline-none focus:border-maroon-800"
+                      className="w-full px-3.5 py-2 border border-slate-300 rounded-xl text-xs focus:outline-none focus:border-sky-600 focus:ring-1 focus:ring-sky-600"
                     ></textarea>
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-maroon-800 via-maroon-700 to-maroon-800 hover:from-maroon-900 hover:to-maroon-800 text-white font-bold text-xs uppercase tracking-wider shadow-md transition-all flex items-center justify-center gap-2"
+                    className="w-full py-3.5 px-6 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs uppercase tracking-wider shadow transition-all flex items-center justify-center gap-2"
                   >
-                    <Send className="w-4 h-4 text-amber-300" />
+                    <Send className="w-4 h-4 text-sky-100" />
                     <span>{lang === 'hi' ? 'स्वयंसेवक पंजीकरण पूर्ण करें' : 'Submit Volunteer Application'}</span>
                   </button>
                 </form>
               ) : (
                 <div className="text-center py-12 space-y-4">
-                  <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
+                  <div className="w-16 h-16 rounded-full bg-sky-100 text-sky-600 flex items-center justify-center mx-auto">
                     <CheckCircle2 className="w-10 h-10" />
                   </div>
-                  <h4 className="font-serif font-bold text-2xl text-maroon-950">
+                  <h4 className="font-bold text-2xl text-sky-950">
                     {lang === 'hi' ? 'सादर धन्यवाद! आपका पंजीकरण प्राप्त हुआ' : 'Registration Received with Gratitude!'}
                   </h4>
-                  <p className="text-sm text-stone-600 max-w-md mx-auto">
+                  <p className="text-sm text-slate-600 max-w-md mx-auto">
                     {lang === 'hi'
                       ? `प्रिय ${formData.fullName}, माँ विंध्यवासिनी सेवा समिति के सेवा मिशन से जुड़ने के लिए धन्यवाद। हमारी समन्वय समिति जल्द आपसे संपर्क करेगी।`
                       : `Dear ${formData.fullName}, thank you for stepping forward to serve with us. Our coordinator will contact you shortly.`}
@@ -319,7 +316,7 @@ export default function JoinUsPage() {
                         message: ''
                       });
                     }}
-                    className="px-6 py-2.5 rounded-full bg-maroon-800 text-white text-xs font-bold shadow-md hover:bg-maroon-900"
+                    className="px-6 py-2.5 rounded-full bg-sky-600 text-white text-xs font-bold shadow hover:bg-sky-700"
                   >
                     {lang === 'hi' ? 'दूसरा पंजीकरण करें' : 'Submit Another Application'}
                   </button>
@@ -333,22 +330,22 @@ export default function JoinUsPage() {
       {/* Frequently Asked Questions */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8">
-          <span className="text-xs font-bold text-saffron-700 uppercase tracking-widest bg-saffron-100 px-3.5 py-1 rounded-full">
+          <span className="text-xs font-bold text-sky-700 uppercase tracking-widest bg-sky-100 px-3.5 py-1 rounded-full border border-sky-200">
             {lang === 'hi' ? 'जिज्ञासा एवं समाधान' : 'FAQs'}
           </span>
-          <h2 className="text-2xl sm:text-3xl font-serif font-bold text-maroon-900 mt-2">
+          <h2 className="text-2xl sm:text-3xl font-bold text-sky-950 mt-2">
             {lang === 'hi' ? 'स्वयंसेवक सहभागिता संबंधी अक्सर पूछे जाने वाले प्रश्न' : 'Frequently Asked Questions'}
           </h2>
         </div>
 
         <div className="space-y-3">
           {faqs.map((faq, idx) => (
-            <div key={idx} className="bg-white p-5 rounded-2xl border border-stone-200 shadow-sm space-y-1">
-              <h4 className="font-bold text-sm text-maroon-950 flex items-center gap-2">
-                <HelpCircle className="w-4 h-4 text-saffron-600 flex-shrink-0" />
+            <div key={idx} className="bg-white p-5 rounded-2xl border border-sky-100 shadow-sm space-y-1">
+              <h4 className="font-bold text-sm text-sky-950 flex items-center gap-2">
+                <HelpCircle className="w-4 h-4 text-sky-600 flex-shrink-0" />
                 <span>{faq.q}</span>
               </h4>
-              <p className="text-xs text-stone-600 pl-6 leading-relaxed">
+              <p className="text-xs text-slate-600 pl-6 leading-relaxed">
                 {faq.a}
               </p>
             </div>
@@ -359,4 +356,3 @@ export default function JoinUsPage() {
     </div>
   );
 }
-

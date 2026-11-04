@@ -5,42 +5,51 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    font-family: 'Poppins', 'Noto Sans Devanagari', system-ui, sans-serif;
+    font-family: 'Times New Roman', Times, 'Noto Serif Devanagari', Georgia, serif;
   }
   
+  html:lang(hi) {
+    font-family: 'Noto Serif Devanagari', 'Tiro Devanagari Hindi', 'Rozha One', 'Mangal', serif;
+  }
+
+  html:lang(en) {
+    font-family: 'Times New Roman', Times, 'Playfair Display', Georgia, serif;
+  }
+
   body {
-    background-color: #FFF8ED;
-    color: #292524;
+    background-color: #F0F7FF;
+    color: #0F172A;
     overflow-x: hidden;
   }
 
-  h1, h2, h3, .font-heading {
-    font-family: 'Rozha One', 'Cinzel', 'Noto Sans Devanagari', serif;
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: inherit;
+    font-weight: 700;
   }
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar in White & Light Blue */
 ::-webkit-scrollbar {
   width: 9px;
 }
 ::-webkit-scrollbar-track {
-  background: #FFF8ED;
+  background: #F0F7FF;
 }
 ::-webkit-scrollbar-thumb {
-  background: #7B1E2B;
+  background: #38BDF8;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #58141E;
+  background: #0284C7;
 }
 
-/* Sacred Traditional Border Styling */
+/* Light Blue & White Card and Border Stylings */
 .ornate-border {
-  border-image: linear-gradient(to right, #7B1E2B, #F59E0B, #7B1E2B) 1;
+  border-image: linear-gradient(to right, #0284C7, #38BDF8, #0284C7) 1;
 }
 
-.gold-shimmer {
-  background: linear-gradient(90deg, #F59E0B 0%, #FDE68A 50%, #F59E0B 100%);
+.sky-shimmer {
+  background: linear-gradient(90deg, #0284C7 0%, #38BDF8 50%, #0284C7 100%);
   background-size: 200% auto;
   color: transparent;
   -webkit-background-clip: text;
@@ -55,23 +64,22 @@
 }
 
 .pattern-bg {
-  background-color: #FFF8ED;
-  background-image: radial-gradient(#7B1E2B 0.65px, transparent 0.65px), radial-gradient(#F59E0B 0.65px, #FFF8ED 0.65px);
+  background-color: #F0F7FF;
+  background-image: radial-gradient(#BAE6FD 1px, transparent 1px), radial-gradient(#E0F2FE 1px, #F0F7FF 1px);
   background-size: 28px 28px;
   background-position: 0 0, 14px 14px;
 }
 
 .sacred-gradient {
-  background: linear-gradient(135deg, #7B1E2B 0%, #58141E 70%, #380A11 100%);
+  background: linear-gradient(135deg, #0284C7 0%, #0369A1 60%, #0C4A6E 100%);
 }
 
-.saffron-gradient {
-  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+.skyblue-gradient {
+  background: linear-gradient(135deg, #E0F2FE 0%, #BAE6FD 100%);
 }
 
 .cream-card {
   background: #FFFFFF;
-  border: 1px solid rgba(123, 30, 43, 0.08);
-  box-shadow: 0 10px 25px -5px rgba(123, 30, 43, 0.05);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.08);
 }
-
