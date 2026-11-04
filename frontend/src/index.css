@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Poppins', 'Noto Sans Devanagari', system-ui, sans-serif;
+  }
+  
+  body {
+    background-color: #FFF8ED;
+    color: #292524;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-heading {
+    font-family: 'Rozha One', 'Cinzel', 'Noto Sans Devanagari', serif;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF8ED;
+}
+::-webkit-scrollbar-thumb {
+  background: #7B1E2B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #58141E;
+}
+
+/* Sacred Traditional Border Styling */
+.ornate-border {
+  border-image: linear-gradient(to right, #7B1E2B, #F59E0B, #7B1E2B) 1;
+}
+
+.gold-shimmer {
+  background: linear-gradient(90deg, #F59E0B 0%, #FDE68A 50%, #F59E0B 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.pattern-bg {
+  background-color: #FFF8ED;
+  background-image: radial-gradient(#7B1E2B 0.65px, transparent 0.65px), radial-gradient(#F59E0B 0.65px, #FFF8ED 0.65px);
+  background-size: 28px 28px;
+  background-position: 0 0, 14px 14px;
+}
+
+.sacred-gradient {
+  background: linear-gradient(135deg, #7B1E2B 0%, #58141E 70%, #380A11 100%);
+}
+
+.saffron-gradient {
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+}
+
+.cream-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(123, 30, 43, 0.08);
+  box-shadow: 0 10px 25px -5px rgba(123, 30, 43, 0.05);
+}
+
